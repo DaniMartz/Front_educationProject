@@ -1,0 +1,41 @@
+.login-card-description {
+    font-size: 25px;
+    font-weight: normal;
+    margin-bottom: 23px; 
+}
+
+.form-control {
+    border: 1px solid #BFBDBD;
+    padding: 15px 25px;
+    margin-bottom: 20px;
+    min-height: 45px;
+    font-size: 13px;
+    line-height: 15;
+    font-weight: normal; 
+}
+
+.form-control::-webkit-input-placeholder,
+.form-control::-moz-placeholder,
+.form-control:-ms-input-placeholder,
+.form-control::-ms-input-placeholder,
+.form-control::placeholder{
+    color: #BFBDBD; /*#6a6d6b*/ /*#CFCDCE*/
+}
+
+.forgot-password-link {
+    font-size: 14px;
+    color: #BFBDBD;
+    margin-bottom: 12px; 
+}
+
+.login-card-footer-text {
+    font-size: 16px;
+    color: #262A32; /*#000000*/
+    margin-bottom: 30px; 
+}
+
+@media (max-width: 767px) {
+    .login-card-footer-text {
+        margin-bottom: 24px; 
+    } 
+}
