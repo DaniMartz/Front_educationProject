@@ -7,9 +7,10 @@ import { AlumnoRoutingModule } from "./alumno-routing.module";
 import { DashboardAlumnoContainer } from './containers/dashboard-alumno/dashboard-alumno.container';
 import { MateriaAlumnoContainer } from './containers/materia-alumno/materia-alumno.container';
 import { AvisosAlumnoComponent } from './components/avisos-alumno/avisos-alumno.component';
+import { CalificacionesAlumnoComponent } from './components/calificaciones-alumno/calificaciones-alumno.component';
 
 @NgModule({
-  declarations: [DashboardAlumnoContainer, MateriaAlumnoContainer, AvisosAlumnoComponent],
+  declarations: [DashboardAlumnoContainer, MateriaAlumnoContainer, AvisosAlumnoComponent, CalificacionesAlumnoComponent],
   imports: [
     CommonModule,
     FormsModule,
