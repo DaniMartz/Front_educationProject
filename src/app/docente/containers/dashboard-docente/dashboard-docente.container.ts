@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-dashboard-docente',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardDocenteContainer implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
+  // nombre: '';
 
   ngOnInit(): void {
+  }
+
+  materia(name: string){
+    this.router.navigate(['Docente/Materia', name]);
   }
 
 }

@@ -11,6 +11,7 @@ import { MaterialModule } from '../app/material/material.module';
 import { FlexLayoutModule } from "@angular/flex-layout";
 
 import { SharedModule } from "./shared/shared.module";
+import { DevextremeModule } from './devextreme/devextreme.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SharedModule } from "./shared/shared.module";
     HttpClientModule,
     MaterialModule,
     FlexLayoutModule,
-    SharedModule
+    SharedModule,
+    DevextremeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

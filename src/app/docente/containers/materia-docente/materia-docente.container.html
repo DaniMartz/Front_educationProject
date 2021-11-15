@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <section class="team-section py-2">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex btns btn-toolbar" role="group">
+                    <div id="longtabs">
+                        <dx-tabs
+                            #tab
+                            (onItemClick)="selectTab($event)"
+                            [selectedIndex]="tabActual"
+                            [focusStateEnabled]="false"
+                            [dataSource]="longtabs"
+                        ></dx-tabs>
+                    </div>
+                </div>
+                
+                <!-- AVISOS -->
+                <div *ngIf="tabActual === 0">
+                    <app-avisos-docente></app-avisos-docente>
+                </div>
+
+                <!-- TAREAS -->
+                <div *ngIf="tabActual === 1">
+                   <p>AQUI VA LA PANTALLA DE TAREAS</p>
+                   <p>SE CREA EL COMPONENTE DE TAREA Y SE MANDA LLAMAR</p>
+                   <p>EJEMPLO COMO EL COMPONENTE DE AVISOS</p>
+                </div>
+
+                <!-- CALIFICACIONES -->
+                <div *ngIf="tabActual === 2">
+                    {{materiaName}}
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

@@ -39,7 +39,7 @@
 
 #NavLayoutSidebar {
     min-width: 213px;
-    background-color: #4496D2; /*#8DBAA6*/ /*278DC6*/
+    background-color: #013856;
     color: #fff;
     transition: all 0.3s;
 }
@@ -83,7 +83,7 @@
 
 #NavLayoutSidebar.active .div-layout-sidebar-cabecera {
     padding: 30px;
-    background-color: #4496D2; /*#8DBAA6*/ /*278DC6*/
+    background-color: #013856; /*#8DBAA6*/ /*278DC6*/
     max-width: 60px;
     min-width: 60px;
 }
@@ -100,7 +100,7 @@
 
 #NavLayoutSidebar .p-layout-sidebar-desplazamiento:hover {
     color: #fff;
-    background: #F0A30F 0% 0% no-repeat padding-box; /*FBBD44*/ /*029646*/
+    background: #FFCC33 0% 0% no-repeat padding-box; /*FBBD44*/ /*029646*/
     padding: 15px 10px 15px 22px;
 }
 
@@ -110,7 +110,7 @@
 
 #NavLayoutSidebar .div-layout-sidebar-cabecera {
     padding: 30px;
-    background-color: #4496D2; /*#8DBAA6*/ /*278DC6*/
+    background-color: #013856; /*#8DBAA6*/ /*278DC6*/
     max-width: 213px;
     min-width: 213px;
 }
@@ -133,14 +133,14 @@
 #NavLayoutSidebar ul li a:hover {
     min-width: 213px;
     color: #fff;
-    background: #F0A30F 0% 0% no-repeat padding-box; /*FBBD44*/ /*029646*/
+    background: #FFCC33 0% 0% no-repeat padding-box; /*FBBD44*/ /*029646*/
     padding: 14px 33px 15px 23px;
 }
 
 #NavLayoutSidebar ul li.active > a,
 a[aria-expanded="true"] {
     color: #fff;
-    background: #F0A30F 0% 0% no-repeat padding-box; /*FBBD44*/ /*029646*/
+    background: #FFCC33 0% 0% no-repeat padding-box; /*FBBD44*/ /*029646*/
 }
 
 #NavLayoutSidebar .i-layout-sidebar-icon {
@@ -219,7 +219,7 @@ p:focus {
 }
 
 .a-layout-sidebar-active {
-    background-color: #F0A30F; /*FBBD44*/ /*029646*/
+    background-color: #FFCC33; /*FBBD44*/ /*029646*/
     transition: all 0.3s;
 }
 
@@ -240,7 +240,7 @@ a:hover i {
 }
 
 .bg-primary {
-    background-color: #4496D2 !important; /*#8DBAA6*/ /*278DC6*/
+    background-color: #013856 !important; /*#8DBAA6*/ /*278DC6*/
 }
 
 a,
@@ -254,7 +254,7 @@ a:focus {
 
 .navbar {
     padding: 15px 10px;
-    background-color: #4496D2; /*#8DBAA6*/ /*278DC6*/
+    background-color: #013856; /*#8DBAA6*/ /*278DC6*/
     border: none;
     border-radius: 0;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
@@ -297,7 +297,7 @@ ul ul a {
 }
 
 .a-layout-navbar-cerrar-sesion:hover {
-    color: #F0A30F; /*FBBD44*/ /*029646*/
+    color: #FFCC33; /*FBBD44*/ /*029646*/
 }
 
 
