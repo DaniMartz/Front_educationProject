@@ -43,7 +43,7 @@ button{
     color: #FFCC33;
     background-color: #013856;
     border-color: #013856;
-    box-shadow: 0 0 10px 0 #013856 inset, 0 0 10px 4px #013856;
+    box-shadow: 0 0 10px 0 #013856 inset;
 }
 
 .btn-primary:focus,

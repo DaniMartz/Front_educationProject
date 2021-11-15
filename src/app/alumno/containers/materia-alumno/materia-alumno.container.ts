@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router, ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-materia-alumno',
@@ -6,10 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./materia-alumno.container.css']
 })
 export class MateriaAlumnoContainer implements OnInit {
+  @Input() materiaName: string;
 
-  constructor() { }
+  tabActual: number = 0;
+  longtabs = [
+    { text: 'Avisos'},
+    { text: 'Tareas'},
+    { text: 'Calificaciones'}
+  ]
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.materiaName = this.route.snapshot.paramMap.get("nombre");
+  }
+
+  selectTab(e){
+    this.tabActual = e.itemIndex;
   }
 
 }

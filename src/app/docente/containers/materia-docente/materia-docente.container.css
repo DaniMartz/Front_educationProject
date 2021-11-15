@@ -2,7 +2,6 @@
     color: #908233;
 }
 
-body{margin-top:20px;}
 .py-5 {
     padding-top: 3rem !important;
     padding-bottom: 3rem !important;
@@ -122,4 +121,70 @@ body{margin-top:20px;}
     border-top-right-radius: 6px !important;
     border-bottom-right-radius: 6px !important;
     border-right: solid 1px !important;
+}
+
+.a {
+    fill: none;
+}
+
+.b {
+    clip-path: url(#a);
+}
+
+.c,
+.d {
+    fill: #E9EDF6;
+}
+
+.d {
+    opacity: 0.5;
+    isolation: isolate;
+}
+
+.masthead {
+    position: relative;
+    background-color: #013856;
+    background-image: url(https://startbootstrap.com/assets/img/overlay.svg), linear-gradient(45deg, #013856 0%, #013856 100%);
+    background-size: cover;
+    z-index: 0
+}
+
+.masthead svg.wave {
+    position: absolute;
+    bottom: -1px;
+    left: 0
+}
+
+.masthead h1 {
+    color: #fff;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 1.1;
+    z-index: 1
+}
+
+.masthead h2 {
+    color: rgba(255, 255, 255, .6);
+    font-weight: 600;
+    z-index: 1;
+    font-size: 1.2rem
+}
+
+@media(min-width:992px) {
+    .masthead h1 {
+        font-size: 3rem
+    }
+    .masthead h2 {
+        font-size: 1.5rem
+    }
+}
+
+.masthead-page {
+    padding: 1rem 0 4rem
+}
+
+@media(min-width:992px) {
+    .masthead-page h1 {
+        font-size: 2.5rem
+    }
 }
