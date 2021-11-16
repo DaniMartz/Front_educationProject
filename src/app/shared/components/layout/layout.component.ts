@@ -1,6 +1,8 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import * as $ from "jquery";
 import { Router } from "@angular/router";
+import { Subscription } from 'rxjs';
+import { ServicioGeneralService } from "../../../_services/servicio-general.service";
 
 @Component({
   selector: 'app-layout',
@@ -10,7 +12,7 @@ import { Router } from "@angular/router";
 export class LayoutComponent implements OnInit {
   public innerWidth: any;
   isDocente: boolean = false;
-
+  subjectGetter:Subscription;
   menus;
 
   @HostListener('window:resize', ['$event']) onResize(event) {
@@ -21,38 +23,50 @@ export class LayoutComponent implements OnInit {
     }
   }
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+    private _service:ServicioGeneralService) {
     this.isDocente = window.location.pathname.includes('Docente') ? true : false;
 
     if(this.isDocente){
-      //CONSULTAR EL SERVICIO PARA DOCENTE
-      this.menus = [
-        {
-          ruta: "/Produccion/Principal",
-          nombre: "Programación",
-          icono: "fas fa-chalkboard-teacher fa-lg"
-        },
-        {
-          ruta: "/Bodega/Principal",
-          nombre: "Álgebra",
-          icono: "fas fa-chalkboard-teacher fa-lg"
-        },
-      ];
-    }else{
-      //CONSULTAR EL SERVICIO PARA ALUMNO
-      this.menus = [
-        {
-          ruta: "/Produccion/Principal",
-          nombre: "Base de datos",
-          icono: "fas fa-book-reader fa-lg"
-        },
-        {
-          ruta: "/Bodega/Principal",
-          nombre: "Álgebra",
-          icono: "fas fa-book-reader fa-lg"
-        },
-      ];
+      this.subjectGetter = this._service.getSubjects().subscribe(data => {
+        console.log("respuesta del login ", data);
+        this.menus = data.map(function(s) {
+            return {
+              ruta: "/Produccion/Principal",
+              nombre: s.title,
+              icono: "fas fa-chalkboard-teacher fa-lg"
+            };
+        });
+      });
     }
+    //   //CONSULTAR EL SERVICIO PARA DOCENTE
+    //   this.menus = [
+    //     {
+    //       ruta: "/Produccion/Principal",
+    //       nombre: "Programación",
+    //       icono: "fas fa-chalkboard-teacher fa-lg"
+    //     },
+    //     {
+    //       ruta: "/Bodega/Principal",
+    //       nombre: "Álgebra",
+    //       icono: "fas fa-chalkboard-teacher fa-lg"
+    //     },
+    //   ];
+    // }else{
+    //   //CONSULTAR EL SERVICIO PARA ALUMNO
+    //   this.menus = [
+    //     {
+    //       ruta: "/Produccion/Principal",
+    //       nombre: "Base de datos",
+    //       icono: "fas fa-book-reader fa-lg"
+    //     },
+    //     {
+    //       ruta: "/Bodega/Principal",
+    //       nombre: "Álgebra",
+    //       icono: "fas fa-book-reader fa-lg"
+    //     },
+    //   ];
+    // }
   }
 
   ngOnInit(): void {

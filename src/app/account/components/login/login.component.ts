@@ -69,7 +69,6 @@ export class LoginComponent implements OnInit {
     const valid = this.validationGroup.instance.validate();
 
     if(valid.isValid){
-      // this.gLogin = {email: this.loginForm.value.email, password: this.loginForm.value.password};
       this.gLogin = {
         user:{
           email: this.loginForm.value.email, 
@@ -77,9 +76,12 @@ export class LoginComponent implements OnInit {
         }
       }
       console.log("gLogin ", this.gLogin);
-
+      
       this.loginSB = this._service.login(this.gLogin).subscribe(data => {
         console.log("respuesta del login ", data);
+        localStorage.setItem ('token', data.access_token);
+        this.rol = data.account
+        this.goTo();
       });
 
     }else{
@@ -91,12 +93,12 @@ export class LoginComponent implements OnInit {
   //   this.register = !this.register;
   // }
 
-  // goTo(){
-  //   if(this.rol === "alumno"){
-  //     this.router.navigate(['Alumno/Dashboard']);
-  //   }else{
-  //     this.router.navigate(['Docente/Dashboard']);
-  //   }
-  // }
+  goTo(){
+    if(this.rol === "Student"){
+      this.router.navigate(['Alumno/Dashboard']);
+    }else{
+      this.router.navigate(['Docente/Dashboard']);
+    }
+  }
 
 }
