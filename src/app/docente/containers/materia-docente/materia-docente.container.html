@@ -42,7 +42,7 @@
                         ></dx-tabs>
                     </div>
                 </div>
-                
+
                 <!-- AVISOS -->
                 <div *ngIf="tabActual === 0">
                     <app-avisos-docente></app-avisos-docente>
@@ -50,9 +50,7 @@
 
                 <!-- TAREAS -->
                 <div *ngIf="tabActual === 1">
-                   <p>AQUI VA LA PANTALLA DE TAREAS</p>
-                   <p>SE CREA EL COMPONENTE DE TAREA Y SE MANDA LLAMAR</p>
-                   <p>EJEMPLO COMO EL COMPONENTE DE AVISOS</p>
+                   <app-tareas-docentes></app-tareas-docentes>
                 </div>
 
                 <!-- CALIFICACIONES -->

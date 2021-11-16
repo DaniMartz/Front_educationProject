@@ -1,0 +1,54 @@
+<div class="tareas-container" *ngIf="homeworks$ | async as homeworks">
+  <div class="buttons-row">
+    <a class="button" (click)="toggleHomeworkModal()">+ nueva tarea</a>
+  </div>
+
+  <div class="homeworks-table" *ngIf="homeworks.length ">
+    <div class="table-header">
+      <div class="table-cell">
+        <span>fecha de creación</span>
+      </div>
+      <div class="table-cell">
+        <span>descripcion</span>
+      </div>
+      <div class="table-cell">
+        <span>fecha de entrega</span>
+      </div>
+    </div>
+    <div class="table-content">
+      <div class="table-row row-over" *ngFor="let hw of homeworks">
+        <div class="table-cell text">
+          {{ hw.creationDate | date: "MMMM d 'at' h:mm a":"UTC" }}
+        </div>
+        <div class="table-cell text">{{ hw.description }}</div>
+        <div class="table-cell text">
+          {{ hw.dueToDate | date: "MMMM d 'at' h:mm a":"UTC" }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-modal
+  *ngIf="isHomeWorkModalOpen"
+  title="agregar una nueva tarea"
+  (clickOutside)="toggleHomeworkModal()"
+>
+  <div class="modal-body">
+    <div class="row">
+      <span class="label">descripción</span>
+      <textarea [ngModel]="hwDescription$ | async" (ngModelChange)="hwDescription$.next($event)"  class="description" type="text"></textarea>
+    </div>
+    <div class="row">
+      <span class="label">fecha de vencimiento</span>
+      <input class="dueTo" type="datetime-local" [ngModel]="hwDueTo$ | async" (ngModelChange)="hwDueTo$.next($event)"/>
+    </div>
+
+    <div class="bottom-buttons">
+      <span class="button" (click)="addHomework(homeworks)">agregar</span>
+      <span class="button" (click)="toggleHomeworkModal()">cancelar</span>
+    </div>
+  </div>
+</app-modal>
+</div>
+
+
