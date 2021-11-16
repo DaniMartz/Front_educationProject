@@ -31,7 +31,6 @@ export class TareasDocentesComponent implements OnInit {
   addHomework(hw: Homework[]) {
     const date = new Date();
     hw.push({creationDate:date, description: this.hwDescription$.value, dueToDate: this.hwDueTo$.value});
-    console.log(hw);
     this.toggleHomeworkModal();
   }
 
