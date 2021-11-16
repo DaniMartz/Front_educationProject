@@ -1,5 +1,9 @@
 <div class="section_our_solution mt-3">
-    <button class="btn btn-primary btn-round">Agregar materia</button>
+    <div class="row justify-content-end">
+        <div class="col-auto">
+            <button class="btn btn-primary btn-round">Agregar materia</button>
+        </div>
+    </div>
     <div class="row">
         <div class="col-4"
         *ngFor="let subject of subjects">
@@ -17,7 +21,7 @@
                             <p>
                                 {{ subject.description}}
                             </p>
-                            <button type="button" class="read_more_btn" (click)="materia('materia1')">Entrar</button>
+                            <button type="button" class="read_more_btn" (click)="materia(subject.title)">Entrar</button>
                         </div>
                     </div>
                 </div>

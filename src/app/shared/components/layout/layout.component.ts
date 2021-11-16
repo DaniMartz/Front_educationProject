@@ -30,9 +30,9 @@ export class LayoutComponent implements OnInit {
     if(this.isDocente){
       this.subjectGetter = this._service.getSubjects().subscribe(data => {
         console.log("respuesta del login ", data);
-        this.menus = data.map(function(s) {
+        this.menus = data[0].map(function(s) {
             return {
-              ruta: "/Produccion/Principal",
+              ruta: "/Docente/Materia/" + s.title,
               nombre: s.title,
               icono: "fas fa-chalkboard-teacher fa-lg"
             };
