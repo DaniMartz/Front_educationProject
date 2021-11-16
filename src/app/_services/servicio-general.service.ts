@@ -16,7 +16,7 @@ export class ServicioGeneralService {
   };
 
   public login(data){
-    return this.httpClient.post<LoginDTO>(`https://backeducationproject.herokuapp.com/auth/login`, JSON.stringify(data));
+    return this.httpClient.post<LoginDTO>(`https://backeducationproject.herokuapp.com/auth/login`,JSON.stringify(data), this.httpOptions);
   }
 
 
