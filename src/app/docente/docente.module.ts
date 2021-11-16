@@ -8,17 +8,19 @@ import { DashboardDocenteContainer } from './containers/dashboard-docente/dashbo
 import { MateriaDocenteContainer } from './containers/materia-docente/materia-docente.container';
 import { AvisosDocenteComponent } from './components/avisos-docente/avisos-docente.component';
 import { CalificacionesDocenteComponent } from './components/calificaciones-docente/calificaciones-docente.component';
-
+import { TareasDocentesComponent } from './components/tareas-docentes/tareas-docentes.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  declarations: [DashboardDocenteContainer, MateriaDocenteContainer, AvisosDocenteComponent, CalificacionesDocenteComponent],
+  declarations: [DashboardDocenteContainer, MateriaDocenteContainer, AvisosDocenteComponent, CalificacionesDocenteComponent, TareasDocentesComponent],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
     DocenteRoutingModule,
-    DevextremeModule
+    DevextremeModule,
+    SharedModule
   ]
 })
 export class DocenteModule { }

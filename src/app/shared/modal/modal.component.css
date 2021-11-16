@@ -1,0 +1,45 @@
+.wrapper {
+  -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  background: #ffffff;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  margin: 0 auto;
+  /* Will not center vertically and won't work in IE6/7. */
+  max-height: calc(100vh - 200px);
+  max-width: 75%;
+  min-height: 300px;
+  overflow: hidden;
+  padding: 30px;
+  position: fixed;
+  right: 0;
+  top: 100px;
+  z-index: 1003;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: solid 1px #b2d1e7;
+}
+ .title {
+  font-size: 24px;
+  color: #013856;
+  font-weight: 500;
+}
+
+.close {
+  cursor: pointer;
+  margin-left: auto;
+  width: 50px;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow: auto;
+}

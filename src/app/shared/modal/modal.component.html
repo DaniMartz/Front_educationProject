@@ -1,0 +1,11 @@
+<div class="wrapper" appDropdownOutsideClick (clickOutside)="toggle()">
+  <div class="header">
+    <div class="title">
+      {{ title }}
+    </div>
+    <img alt="close" class="close" (click)="toggle()" src="assets/img/blue-x.svg" />
+  </div>
+  <div class="content">
+    <ng-content></ng-content>
+  </div>
+</div>
