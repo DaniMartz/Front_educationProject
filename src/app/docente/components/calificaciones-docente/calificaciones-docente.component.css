@@ -1,0 +1,20 @@
+::ng-deep .dx-widget {
+    color: #333;
+    font-weight: 400;
+    font-size: 16px;
+    /* line-height: 1.35715; */
+}
+
+::ng-deep .dx-datagrid-headers {
+    background-color: white !important;
+    font-weight: bold !important;
+    color: #333;
+}
+
+::ng-deep .table-striped tbody tr:nth-of-type(odd){
+    background-color: white !important;
+}
+
+::ng-deep .dx-datagrid-content .dx-datagrid-table .dx-row > td{
+    vertical-align: middle !important;
+}

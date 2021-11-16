@@ -1,0 +1,30 @@
+.content-account{
+    height: 100%;
+    background-color: #013856;
+}
+
+.card-content{
+    width:70%;
+    margin:auto;
+    text-align: center;
+}
+
+.account-img{
+    width:200px;
+    position: relative; 
+    bottom:100px;
+}
+
+.card {
+    position: relative;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #E9EDF6;  /*#F1F2F2*/ /*#fff*/
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,0.125);
+    border-radius: .25rem;
+}

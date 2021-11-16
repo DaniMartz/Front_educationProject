@@ -1,4 +1,79 @@
-/* You can add global styles to this file, and also import other style files */
-
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body { 
+    margin: 0; 
+    font-family: 'Rubik', sans-serif; 
+    color: #2D2D2D;
+    font-size: 1rem;
+    font-weight: 400;
+    background-color: #E9EDF6;  /*#F1F2F2*/ /*#fff*/
+}
+
+button{
+    font-family: 'Rubik', sans-serif;
+    padding: 8px 12px;
+}
+
+.btn {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    background-color: transparent;
+    border-radius: 0.6em;
+    cursor: pointer;
+    line-height: 1;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500;
+}
+
+
+.btn-primary{
+    color: #013856;
+    background-color: #FFCC33;
+    border-color: #FFCC33;
+    box-shadow: 0 0 40px 40px #FFCC33 inset, 0 0 0 0 #FFCC33;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+}
+
+.btn-primary:hover {
+    color: #FFCC33;
+    background-color: #013856;
+    border-color: #013856;
+    box-shadow: 0 0 10px 0 #013856 inset;
+}
+
+.btn-primary:focus,
+.btn-primary.focus {
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08), 0 0 0 0 rgba(240, 163, 15, 0.8);
+    background-color: #FFCC33; /*FBBD44*/ /*029646*/
+    border-color: #FFCC33;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: none, 0 0 0 0 rgba(240, 163, 15, 0.8);
+    background-color: #FFCC33; /*FBBD44*/ /*029646*/
+    border-color: #FFCC33;
+    color: #013856;
+}
+
+.btn-round {
+    border-width: 1px;
+    border-radius: 30px;
+}
+
+.mat-card{
+    font-family: 'Rubik', sans-serif; 
+}
+
+
+.card-footer-nav a {
+    font-size: 14px;
+    color: #BFBDBD; /*#6a6d6b*/ /*#CFCDCE*/
+}

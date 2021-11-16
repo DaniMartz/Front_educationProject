@@ -8,6 +8,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from '../app/material/material.module';
+import { FlexLayoutModule } from "@angular/flex-layout";
+
+import { SharedModule } from "./shared/shared.module";
+import { DevextremeModule } from './devextreme/devextreme.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,10 @@ import { MaterialModule } from '../app/material/material.module';
     NgbModule,
     RouterModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule,
+    SharedModule,
+    DevextremeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

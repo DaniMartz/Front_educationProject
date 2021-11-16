@@ -1,0 +1,46 @@
+<div class="text-center" *ngIf="!register">
+    <p class="login-card-description">Ingresa con tu cuenta</p>
+    <form
+        [formGroup]="loginForm"
+        (ngSubmit)="login($event)">
+
+        <dx-validation-group #targetGroup>
+            <div class="form-group">
+                <label class="sr-only">Email</label>
+                <dx-text-box
+                    class="form-control"
+                    formControlName="email"
+                    placeholder="Ingresa tu email"
+                >
+                    <dx-validator>
+                        <dxi-validation-rule type="required" message="Requerido">
+                        </dxi-validation-rule>
+                    </dx-validator>
+                </dx-text-box>
+            </div>
+            <div class="form-group mb-5">
+                <label for="password" class="sr-only">Contraseña</label>
+                <dx-text-box
+                    class="dxinput form-control"
+                    placeholder="Ingresa Contraseña"
+                    [(mode)]="passwordMode"
+                    formControlName="password"
+                >
+                    <dx-validator>
+                        <dxi-validation-rule type="required" message="Requerido">
+                        </dxi-validation-rule>
+                        <dxi-button
+                            cssClass=""
+                            name="today"
+                            location="after"
+                            [options]="passwordButton"
+                        >
+                        </dxi-button>
+                    </dx-validator>
+                </dx-text-box>
+            </div>
+            <button class="btn btn-primary btn-round" type="submit">Login</button>
+        </dx-validation-group>
+    </form>
+    <!-- <a href="#!" class="forgot-password-link">¿Olvidaste tu contraseña?</a> -->
+</div>

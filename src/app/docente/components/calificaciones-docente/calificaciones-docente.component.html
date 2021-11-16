@@ -1,0 +1,61 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <dx-data-grid
+                #grid
+                id="TableCalif"
+                class="mx-auto table-striped mt-2 mb-2"
+                focusRowEnabled="true"
+                keyExpr="id"
+                columnAutoWidth="true"
+                noDataText="No hay resultados que mostrar"
+                [showBorders]="true"
+                width="100%"
+                [dataSource]="dataSource">
+
+                <dxo-paging 
+                    [pageSize]="10">
+                </dxo-paging>
+                <dxo-pager 
+                    [visible]="true" 
+                    allowedPageSizes="allowedPageSizes" 
+                    displayMode="full"
+                    showPageSizeSelector="true" 
+                    showInfo="true" 
+                    showNavigationButtons="true">
+                </dxo-pager>
+        
+                <dxo-column-fixing [enabled]="true"></dxo-column-fixing>
+
+                <dxi-column
+                    alignment="left"
+                    [allowFixing]="false"
+                    caption="Nombre"
+                    dataField="nombreAlumno">
+                </dxi-column>
+                
+                <!-- SE VA CREANDO CADA COLUMNA SEGUN TANTAS TAREAS HAYA -->
+                <dxi-column
+                    alignment="left"
+                    [allowFixing]="false"
+                    headerCellTemplate="header"
+                    dataField="calificacion">
+                </dxi-column>
+                 <!-- ************************************************ -->
+
+                <!-- TEMPLATES -->
+                <div *dxTemplate="let data of 'header'">
+                    <!-- <span>{{data.data.fecha | date}}</span>
+                    <b>{{data.data.nombreTarea}}</b>
+                    <hr>
+                    <span>de {{data.data.puntos}}</span> -->
+                    <span>15 de Nov</span>
+                    <br>
+                    <b>Fundamental 1</b>
+                    <hr class="mt-0 mb-1">
+                    <span>de 20</span>
+                </div>
+            </dx-data-grid>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,120 @@
+<div class="div-layout-contenedor-principal">
+    <nav id="NavLayoutSidebar" class="nav-layout-sidebar-fixed">
+        <div class="div-layout-clase-fixed">
+            <div class="div-layout-logo text-center div-layout-sidebar-cabecera">
+                <i
+                    id="ILayoutSidebarCollapse"
+                    class="i-layout-sidebar-icon navbar-brand fas fa-bars fa-lg li-layout-elementos-extra"
+                    (click)="ocultarSideBar()"
+                >
+                </i>
+            </div>
+
+            <div>
+                <ul class="list-unstyled ul-layout-sidebar-elementos">
+                    <li class="li-layout-sidebar-elemento">
+                        <a class="a-layout-sidebar-link" [routerLink]="">
+                            <i class="fas fa-home"></i>
+                            <span>
+                                Home
+                            </span>
+                        </a>
+                    </li>
+
+                    <div class="mt-3 mb-3 text-center">
+                        <span class="layout-sub">Cursos inscritos</span>
+                    </div>
+                        
+                    <div 
+                        *ngFor="let menu of menus"
+                        [class]="menu.children ? 'has-children' : ''"
+                    >
+                        <li class="li-layout-sidebar-elemento">
+                            <a
+                                class="a-layout-sidebar-link"
+                                [routerLink]="menu.ruta"
+                                routerLinkActive=""
+                            >
+                                <i class="{{ menu.icono }}"></i>
+                                <span>{{ menu.nombre }}</span>
+                            </a
+                            >
+                        </li>
+
+                        <div *ngIf="menu.children">
+                            <li
+                              *ngFor="let children of menu.children"
+                              class="li-layout-sidebar-extra li-layout-elementos-extra"
+                            >
+                                <a
+                                    class="a-layout-sidebar-extra"
+                                    [routerLink]="children.ruta"
+                                    routerLinkActive="a-layout-sidebar-active"
+                                >
+                                    <i class="">&#9679;</i>
+                                    <span class="span-layout-sidebar-extra">
+                                        {{children.nombre}}
+                                    </span>
+                                </a>
+                            </li>
+                        </div>
+                    </div>
+
+                    <li class="mt-5 li-layout-cerrar-sesion">
+                        <a class="a-layout-sidebar-cerrar-sesion" (click)="cerrarSesion()">
+                            <i class="fas fa-sign-out-alt fa-lg"></i>
+                            <span class="span-layout-sidebar-cerrar-sesion">
+                                Cerrar Sesión
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="div-layout-sidebar-icono-oculto">
+                    <p
+                        id="ILayoutSidebarCollapse"
+                        class="p-layout-sidebar-desplazamiento-fixed p-layout-sidebar-desplazamiento li-layout-elementos-extra"
+                        (click)="ocultarSideBar()"
+                    >
+                        <a class="a-layout-sidebar-icono-link">
+                            <i class="fas fa-arrows-alt-h fa-lg"></i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="DivLayoutContenido">
+        <nav 
+            id="NavLayoutNavbar"
+            class="div-layout-clase-fixed nav-layout-navbar-fixed navbar navbar-expand-sm navbar-light bg-primary text-white"
+        >
+            <div class="div-layout-navbar-icono div-layout-navbar-abrir-icono">
+                <i
+                    id="ILayoutSidebarCollapse"
+                    class="fas fa-bars fa-lg i-layout-navbar-icono navbar-brand li-layout-elementos-extra"
+                    (click)="ocultarSideBar()"
+                >
+                </i>
+            </div>
+        </nav>
+
+        <div class="fixed-top div-layout-navbar-nombre-usuario text-white"> 
+            <ul class="nav float-right">
+                <li class="li-layout-navbar-nombre-usuario">
+                    <span class="float-right my-auto mr-5">
+                        <a class="a-layout-navbar-cerrar-sesion" (click)="cerrarSesion()">Cerrar Sesión </a>
+                    </span>
+                </li>
+            </ul>
+            
+        </div>
+
+        <div id="DivLayoutContenedorModulos" class="div-layout-contenedor-modulos">
+            <router-outlet></router-outlet>
+        </div>
+
+        
+    </div>
+</div>
