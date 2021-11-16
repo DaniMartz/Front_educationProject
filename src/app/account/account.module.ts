@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DevextremeModule } from '../devextreme/devextreme.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material/material.module';
 import { AccountRoutingModule } from './account-routing.module';
@@ -15,7 +16,8 @@ import { DocenteAccountContainer } from './containers/docente-account/docente-ac
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
-    AccountRoutingModule
+    AccountRoutingModule,
+    DevextremeModule
   ]
 })
 export class AccountModule { }
